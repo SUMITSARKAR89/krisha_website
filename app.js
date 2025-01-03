@@ -37,6 +37,26 @@ day.addEventListener('click', () => {
 
 });
 // --------------------------------------------------------------------------
+function techTabAll(a,b,c){
+    //tabpanel + for loop
+    const techContent = document.getElementsByClassName("content");
+    for(let i = 0; i< techContent.length; i++){
+        techContent[i].style.display = "none";
+    }
+  
+    document.getElementById(a).style.display = "flex";
+    b.style.backgroundColor = c;
+}
+document.querySelector(".tech-key-active").click();
+
+// ---------------------------btn active--------------------------------------
+
+ const techKey = document.querySelectorAll('.tech-key');
 
 
-
+techKey.forEach( (btn) => {
+    btn.addEventListener("click", () => {
+        techKey.forEach( (i) => i.classList.remove('tech-key-active'));
+        btn.classList.add('tech-key-active');
+    });
+});
